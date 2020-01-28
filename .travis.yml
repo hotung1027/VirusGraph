@@ -1,6 +1,5 @@
 dist: xenial
 language: scala
-install: sbt
 scala:
   - 2.13.1
 jdk:

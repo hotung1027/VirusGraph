@@ -1,10 +1,11 @@
 dist: xenial
 language: scala
-scala:
-- 2.13.1
-jdk:
-- 11.0.5
 install: sbt
+scala:
+  - 2.13.1
+jdk:
+  - 11.0.5
+
 addons:
   sonarcloud:
     organization: "hotung1027"

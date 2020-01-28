@@ -1,7 +1,16 @@
+dist: xenial
 language: scala
 scala:
-  - 2.13.1
+- 2.13.1
 jdk:
-  - 11.0.5
+- 11.0.5
 install: sbt
-script: sbt
+addons:
+  sonarcloud:
+    organization: "hotung1027"
+    token:
+      secure: "b9OluRaru8icls74Hwr9K2mGPJkYueWKtLDYWnUmjN59B2J86na9dfnKnB96rcSmfYudoSowY9ZkXSIi7FrTXiw5OqUBRsPbjxwhevK0CnJR5RNU7YuFn1uRFiMYaAr/gQx6siBvlLg9A+V04t8QIEoCjrJVMnKx+UcOfTJ/b+K606JPAsr1Fn1tiOR/DxOsHhBWZKKgAsScHRShJs65a5SltVBztHV0fzlP+7q4WaT1TSu+c5uE7Gfs/WltdjtdJ0lMC3dhzIcG51Axe8dGaE9pK13MhE1iPmFqpa/SITqWexR850W37MfDgIT2OuFa/bhazz3rKCdw4sm13viVv++NZuHGliprpO6lQipK7CjGTBy4RA3kcwQDms90UgqLH2OgHIq8uYv8teHtqBRRa+69mHGHPOYvUqaDVILEebKsOH5Xd6KeLlYHbvz2yZio+vpo7QZAyQb+r6Zrsf6oDW+ufzpQbHOYz5Ql61OZydlARFGEeOye9g8A0/H4ounjrEdcpUgRcWVJp/iOz9RIejm6fWucsgjX9nX9zz6+RW3fpFR+mvikmKng2Yt7Trsy9qzVSiBk4StwEep0yC/rgc1foVbMLvI3Ya3L4pYmVCgSLl5vugvZre4tfobQYIRd+b98izwgTnMRk1ey6opa0//G739UCCJXVQdaoN/6+Xc="
+
+script:
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - sonar-scanner
